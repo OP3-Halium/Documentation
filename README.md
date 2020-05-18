@@ -1,6 +1,16 @@
 # Documentation
  Building &amp; installation documentation for Ubuntu Touch on the OnePlus 3/3T
 
+```
+ * Your warranty is now void.
+ *
+ * We are not responsible for bricked devices, dead SD cards,
+ * thermonuclear war, or you getting fired because the alarm app failed. Please
+ * do some research if you have any concerns about features included in this ROM
+ * before flashing it! YOU are choosing to make these modifications, and if
+ * you point the finger at us for messing up your device, we will laugh at you.
+```
+
 ### Table of Contents
 
 
@@ -24,7 +34,7 @@ For ubuntu Focal, repo is not in the ubuntu repository, download it manually fro
 ```
 mkdir ~/Halium/ && cd ~/Halium/
 repo init -u https://github.com/Halium/android -b halium-9.0 --depth=1
-git clone https://github.com/OP3-Halium/local_manifests .repo/local_manifests/ 
+git clone https://github.com/OP3-Halium/local_manifests .repo/local_manifests/
 git clone https://gitlab.com/JBBgameich/halium-install/ halium/scripts/ --depth 1
 ```
 
@@ -55,7 +65,7 @@ mka halium-boot
 
 ## Treblelizing your OP3(T) & Firmware & TWRP
 For further information please read the subject on [XDA](https://forum.xda-developers.com/oneplus-3/oneplus-3--3t-cross-device-development/treble-lineageos-15-1-treble-oneplus-3-t3830455)
-To sumup, GSI port requires a dedicated vendor partition.
+ - To sumup, GSI port requires a dedicated vendor partition.
 
 Download the "[New][A/B] LineageOS 16.0 Treble system-as-root"
 - Recovery : [twrp-op3treble-3.3.1-1.img](https://mega.nz/folder/UgdQRYSD#8s-_u2HJQZDEqNnFOnejxQ)

@@ -12,16 +12,16 @@
 ```
 
 ### Table of Contents
-* [Install prerequisites for building](# Install prerequisites for building)
-* [Initializing local repo](# Initializing local repo)
-* [Syncing local repository](# Syncing local repository)
-* [Applying patches](# Applying patches)
-* [Building HAL parts](# Building HAL parts)
-* [Treblelizing your OP3(T) & Firmware & TWRP](# Treblelizing your OP3(T) & Firmware & TWRP)
-* [Installing using Erfan GSI](# Installing using Erfan GSI)
-* [Note](# Note)
-* [Halium-boot.img MD5SUM](# Halium-boot.img MD5SUM)
-* [Thanks](# Thanks)
+* [Install prerequisites for building](#install-prerequisites-for-building)
+* [Initializing local repo](#initializing-local-repo)
+* [Syncing local repository](#syncing-local-repository)
+* [Applying patches](#applying-patches)
+* [Building HAL parts](#building-HAL-parts)
+* [Treblelizing your OP3(T) & Firmware & TWRP](#treblelizing-your-op3t--firmware--twrp)
+* [Installing using Erfan GSI](#installing-using-Erfan-GSI)
+* [Note](#note)
+* [Halium-boot.img MD5SUM](#halium-bootimg-md5sum)
+* [Thanks](#thanks)
 
 ## Install prerequisites for building
 

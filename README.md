@@ -12,7 +12,16 @@
 ```
 
 ### Table of Contents
-
+ * [Install prerequisites for building] (## Install prerequisites for building)
+ * [Initializing local repo] (## Initializing local repo)
+ * [Syncing local repository] (## Syncing local repository)
+ * [Applying patches] (## Applying patches)
+ * [Building HAL parts] (## Building HAL parts)
+ * [Treblelizing your OP3(T) & Firmware & TWRP] (## Treblelizing your OP3(T) & Firmware & TWRP)
+ * [Installing using Erfan GSI] (## Installing using Erfan GSI)
+ * [Note] (## Note)
+ * [Halium-boot.img MD5SUM] (## Halium-boot.img MD5SUM)
+ * [Thanks] (## Thanks)
 
 ## Install prerequisites for building
 
@@ -106,6 +115,9 @@ Assuming your device is in fastboot mode you can now flash this image by simply 
 ```
 fastboot flash boot out/target/product/oneplus3/halium-boot.img
 ```
+
+## Halium-boot.img MD5SUM
+0e50d15afd6e187045875829a7166018  halium-boot.img
 
 ## Thanks
 - Documentation based on https://github.com/ubports-oneplus5

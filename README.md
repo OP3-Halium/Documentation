@@ -24,7 +24,7 @@ For ubuntu Focal, repo is not in the ubuntu repository, download it manually fro
 ```
 mkdir ~/Halium/ && cd ~/Halium/
 repo init -u https://github.com/Halium/android -b halium-9.0 --depth=1
-git clone https://github.com/ubports-oneplus5/local_manifests -b halium-9.0 .repo/local_manifests/
+git clone https://github.com/OP3-Halium/local_manifests .repo/local_manifests/ 
 git clone https://gitlab.com/JBBgameich/halium-install/ halium/scripts/ --depth 1
 ```
 
@@ -58,20 +58,18 @@ For further information please read the subject on [XDA](https://forum.xda-devel
 To sumup, GSI port requires a dedicated vendor partition.
 
 Download the "[New][A/B] LineageOS 16.0 Treble system-as-root"
-- Recovery : twrp-op3treble-3.3.1-1.img
-- LineageOS 16 image : lineage-16.0-20190826-UNOFFICIAL-oneplus3.zip
-- Firmware 9.0.6 : [oxygenos-9.0.6](https://github.com/nvertigo/firmware-3t) **be careful the firmware are device specific**
+- Recovery : [twrp-op3treble-3.3.1-1.img](https://mega.nz/folder/UgdQRYSD#8s-_u2HJQZDEqNnFOnejxQ)
+- LineageOS 16 image : [lineage-16.0-20190826-UNOFFICIAL-oneplus3.zip](https://mega.nz/folder/UgdQRYSD#8s-_u2HJQZDEqNnFOnejxQ)
+- Firmware 9.0.6 : [oxygenos-9.0.6](https://github.com/nvertigo/firmware-3t) **be careful the firmwares are device specific**
 
-Reboot into fastboot
-- Connect you phone to your computer and install the recovery
-Follow the [TWRP link](https://twrp.me/oneplus/oneplusthree.html)
+Reboot into fastboot and install the TWRP recovery => Check the official link for installation [TWRP link](https://twrp.me/oneplus/oneplusthree.html)
 
 Treblelize your OP3(t)
-Follow : https://forum.xda-developers.com/oneplus-3/oneplus-3--3t-cross-device-development/treble-lineageos-15-1-treble-oneplus-3-t3830455
+ - Follow the information there : https://forum.xda-developers.com/oneplus-3/oneplus-3--3t-cross-device-development/treble-lineageos-15-1-treble-oneplus-3-t3830455
 
 Reboot into the TWRP Recovery
 - Update the firmware
-- install lineage 16.0
+- Install lineage 16.0
 
 Reboot into Lineage, confirm everything works fine.
 
@@ -88,7 +86,8 @@ adb push ~/Halium/out/target/product/oneplus3/halium-boot.img /tmp/
 adb shell "dd if=/tmp/halium-boot.img of=/dev/block/bootdevice/by-name/boot"
 ```
 6. Flash the halium-ramdisk.zip
-7. reboot
+7. Reboot
+8. Enjoy
 
 
 ## Note
@@ -97,3 +96,7 @@ Assuming your device is in fastboot mode you can now flash this image by simply 
 ```
 fastboot flash boot out/target/product/oneplus3/halium-boot.img
 ```
+
+## Thanks
+- Documentation based on https://github.com/ubports-oneplus5
+- Another 3.18 kernel working with ErfanGSI : https://github.com/MotoZ-2016/android_kernel_motorola_msm8996/tree/halium-9.0

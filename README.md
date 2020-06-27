@@ -11,6 +11,9 @@
  * you point the finger at us for messing up your device, we are not responsible.
 ```
 
+to install ubuntu touch on your OP3, you don't need to compile halium source, got directly to [Treblelizing your OP3(T) & Firmware & TWRP](#treblelizing-your-op3t--firmware--twrp)
+
+
 ### Table of Contents
 * [Install prerequisites for building](#install-prerequisites-for-building)
 * [Initializing local repo](#initializing-local-repo)
@@ -121,6 +124,7 @@ https://drive.google.com/drive/folders/1vnJEKkhO3xqH-fWWG55-yxwx5K1EeKq7?usp=sha
 ## Thanks
 - Documentation based on https://github.com/ubports-oneplus5
 - Another 3.18 kernel working with ErfanGSI : https://github.com/MotoZ-2016/android_kernel_motorola_msm8996/tree/halium-9.0
+- https://github.com/OP3Treble Project
 
 
 ## Known issues & temporary fix

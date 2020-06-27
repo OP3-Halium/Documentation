@@ -20,7 +20,7 @@
 * [Treblelizing your OP3(T) & Firmware & TWRP](#treblelizing-your-op3t--firmware--twrp)
 * [Installing using Erfan GSI](#installing-using-Erfan-GSI)
 * [Note](#note)
-* [Halium-boot.img MD5SUM](#halium-bootimg-md5sum)
+* [Files](#Files)
 * [Thanks](#thanks)
 
 ## Install prerequisites for building
@@ -116,9 +116,28 @@ Assuming your device is in fastboot mode you can now flash this image by simply 
 fastboot flash boot out/target/product/oneplus3/halium-boot.img
 ```
 
-## Halium-boot.img MD5SUM
-0e50d15afd6e187045875829a7166018  halium-boot.img
-
+## Files 
+https://drive.google.com/drive/folders/1vnJEKkhO3xqH-fWWG55-yxwx5K1EeKq7?usp=sharing
 ## Thanks
 - Documentation based on https://github.com/ubports-oneplus5
 - Another 3.18 kernel working with ErfanGSI : https://github.com/MotoZ-2016/android_kernel_motorola_msm8996/tree/halium-9.0
+
+
+## Known issues & temporary fix
+- Webbrowser not reconized as a mobile 
+  -  edit the file ```o nano /opt/click.ubuntu.com/com.ubports.morph.browser/0.1/usr/lib/arm-linux-gnueabihf/qt5/qml/Morph/Web/UserAgent02.qml```
+  -  chang line 68 to ``` return (screenDiagonal === 0) ? "unknown" : (screenDiagonal > 0 && screenDiagonal < 190) ? "small" : "small" ```
+  
+- Data doesn't work 
+  ```cd /usr/share/ofono/scripts/ && ./activate-context```
+- Wifi doesn't restart
+  -  ```sudo nano /etc/udev/rules.d/90-oneplus3.rules```
+  -  add   ```ACTION=="change|remove|create", DEVPATH=="/devices/soc/600000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/ieee80211/phy?", RUN+="/usr/bin/python3 /home/phablet/wlan_restart.py"```
+  -  then   ```nano /home/phablet/wlan_restart.py```
+  -  ```#!/usr/bin/python3
+     import subprocess
+     import os.path
+     subprocess.Popen("echo sta > /sys/module/wlan/parameters/fwpath", shell=True)
+     print("Wifi card set up for wlan activation")
+```
+ 

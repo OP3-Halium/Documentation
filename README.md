@@ -133,7 +133,7 @@ https://github.com/OP3-Halium/
 
 ## Known issues & temporary fix
 - Webbrowser not reconized as a mobile 
-  -  edit the file ```o nano /opt/click.ubuntu.com/com.ubports.morph.browser/0.1/usr/lib/arm-linux-gnueabihf/qt5/qml/Morph/Web/UserAgent02.qml```
+  -  edit the file ```sudo nano /usr/lib/arm-linux-gnueabihf/qt5/qml/Morph/Web/UserAgent02.qml```
   -  chang line 68 to ``` return (screenDiagonal === 0) ? "unknown" : (screenDiagonal > 0 && screenDiagonal < 190) ? "small" : "small" ```
   
 - Data doesn't work 

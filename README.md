@@ -23,7 +23,7 @@ to install ubuntu touch on your OP3, you don't need to compile halium source, go
 * [Treblelizing your OP3(T) & Firmware & TWRP](#treblelizing-your-op3t--firmware--twrp)
 * [Installing using Erfan GSI](#installing-using-Erfan-GSI)
 * [Note](#note)
-* [Files](#Files)
+* [Source](#Source)
 * [Thanks](#thanks)
 
 ## Install prerequisites for building
@@ -76,12 +76,15 @@ mka halium-boot
 **NOTE:** If you've decided to install manually (without Erfan GSI) you also need to `mka systemimage`!
 
 ## Treblelizing your OP3(T) & Firmware & TWRP
+### Files 
+https://drive.google.com/drive/folders/1vnJEKkhO3xqH-fWWG55-yxwx5K1EeKq7?usp=sharing
+
 For further information please read the subject on [XDA](https://forum.xda-developers.com/oneplus-3/oneplus-3--3t-cross-device-development/treble-lineageos-15-1-treble-oneplus-3-t3830455)
  - To sumup, GSI port requires a dedicated vendor partition.
 
 Download the "[New][A/B] LineageOS 16.0 Treble system-as-root"
 - Recovery : [twrp-op3treble-3.3.1-1.img](https://mega.nz/folder/UgdQRYSD#8s-_u2HJQZDEqNnFOnejxQ)
-- LineageOS 16 image : [lineage-16.0-20190826-UNOFFICIAL-oneplus3.zip](https://mega.nz/folder/UgdQRYSD#8s-_u2HJQZDEqNnFOnejxQ)
+- LineageOS 16 image : [lineage-Ubuntu touch custom](https://drive.google.com/drive/folders/1vnJEKkhO3xqH-fWWG55-yxwx5K1EeKq7?usp=sharing)
 - Firmware 9.0.6 : [oxygenos-9.0.6](https://github.com/nvertigo/firmware-3t) **be careful the firmwares are device specific**
 
 Reboot into fastboot and install the TWRP recovery => Check the official link for installation [TWRP link](https://twrp.me/oneplus/oneplusthree.html)
@@ -102,7 +105,7 @@ Reboot into Lineage, confirm everything works fine.
 2. Download the https://build.lolinet.com/file/halium/GSI/tools/halium-ramdisk.zip
 3. Ensure your `/vendor` (after mounting) is populated with content from an Android 9 ROM (LineageOS or otherwise)
 4. Flash the GSI zip file
-5. Flash the `halium-boot.img` from before to your boot partition (if you didn't yet):
+5. Flash the [halium-boot.img](https://drive.google.com/drive/folders/1vnJEKkhO3xqH-fWWG55-yxwx5K1EeKq7?usp=sharing) from before to your boot partition (if you didn't yet):
 ```
 adb push ~/Halium/out/target/product/oneplus3/halium-boot.img /tmp/
 adb shell "dd if=/tmp/halium-boot.img of=/dev/block/bootdevice/by-name/boot"
@@ -119,13 +122,14 @@ Assuming your device is in fastboot mode you can now flash this image by simply 
 fastboot flash boot out/target/product/oneplus3/halium-boot.img
 ```
 
-## Files 
-https://drive.google.com/drive/folders/1vnJEKkhO3xqH-fWWG55-yxwx5K1EeKq7?usp=sharing
+
 ## Thanks
 - Documentation based on https://github.com/ubports-oneplus5
 - Another 3.18 kernel working with ErfanGSI : https://github.com/MotoZ-2016/android_kernel_motorola_msm8996/tree/halium-9.0
 - https://github.com/OP3Treble Project
 
+## Source
+https://github.com/OP3-Halium/
 
 ## Known issues & temporary fix
 - Webbrowser not reconized as a mobile 

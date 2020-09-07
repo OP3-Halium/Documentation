@@ -111,8 +111,9 @@ adb push ~/Halium/out/target/product/oneplus3/halium-boot.img /tmp/
 adb shell "dd if=/tmp/halium-boot.img of=/dev/block/bootdevice/by-name/boot"
 ```
 6. Flash the halium-ramdisk.zip
-7. Reboot
-8. Enjoy
+7. Flash the [OP3_GSI_Fix_V1.X](https://drive.google.com/drive/folders/1vnJEKkhO3xqH-fWWG55-yxwx5K1EeKq7?usp=sharing)
+8. Reboot
+9. Enjoy
 
 
 ## Note

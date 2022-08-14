@@ -102,7 +102,7 @@ Reboot into Lineage, confirm everything works fine.
 ## Installing using Erfan GSI
 
 1. Download the latest GSI zip from [here](https://t.me/ErfanGSI)
-2. Download the https://build.lolinet.com/file/halium/GSI/tools/halium-ramdisk.zip
+2. Download the https://mirrors.lolinet.com/firmware/halium/GSI/tools/halium-ramdisk.zip
 3. Ensure your `/vendor` (after mounting) is populated with content from an Android 9 ROM (LineageOS or otherwise)
 4. Flash the GSI zip file
 5. Flash the [halium-boot.img](https://drive.google.com/drive/folders/1vnJEKkhO3xqH-fWWG55-yxwx5K1EeKq7?usp=sharing) from before to your boot partition (if you didn't yet):

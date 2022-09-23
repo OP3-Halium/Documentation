@@ -105,7 +105,7 @@ Reboot into Lineage, confirm everything works fine.
 2. Ensure your `/vendor` partition is populated (after mounting) with content from an Android 9 ROM (LineageOS or equivalent)
 3. In TWRP, go to `Wipe` -> `Advanced Wipe` -> Select everything except Vendor and USB-OTG, then `Swipe to Wipe`. Then reboot back to recovery.
 4. Flash the GSI zip file
-5. Flash [halium-boot.img](https://github.com/OP3-Halium/Documentation/blob/master/halium-boot.img) to your boot partition (See instructions in the note below)
+5. Flash [halium-boot.img](https://github.com/OP3-Halium/Documentation/blob/master/halium-boot.img) to your boot partition (See instructions in the [note](#note) below)
 6. Flash the [OP3_GSI_Fix_V1.X](https://drive.google.com/drive/folders/1vnJEKkhO3xqH-fWWG55-yxwx5K1EeKq7?usp=sharing)
 7. Reboot
 8. Enjoy!
@@ -117,7 +117,7 @@ Reboot into Lineage, confirm everything works fine.
 2. Ensure your '/vendor' partition is populated (after mounting) with content from an Android 9 ROM (LineageOS or equivalent)
 3. In TWRP, go to `Wipe` -> `Advanced Wipe` -> Select everything except Vendor and USB-OTG, then `Swipe to Wipe`. Then reboot back to recovery.
 4. Flash the droidian zip file
-5. Flash [halium-boot.img](https://github.com/OP3-Halium/Documentation/blob/master/halium-boot.img) to your boot partition (See instructions in the note below)
+5. Flash [halium-boot.img](https://github.com/OP3-Halium/Documentation/blob/master/halium-boot.img) to your boot partition (See instructions in the [note](#note) below)
 6. Flash [op3-gsi-fix-droidian.zip](https://gitlab.com/Bettehem/op3-gsi-fix-droidian/-/jobs/artifacts/main/browse?job=makezip)
 7. Reboot
 8. Once you have booted for the first time, open a terminal on the phone and run the `move-home` command, which will move your home folder to the /userdata partition so you can use all of the storage on your device. Your device will reboot when it's done.
@@ -126,8 +126,8 @@ Reboot into Lineage, confirm everything works fine.
 
 ## Note
 
-If you built your own halium-boot.img, it will be located at `out/target/product/oneplus3/halium-boot.img`.
-There are 3 ways of flashing the boot image to your device.
+If you built your own halium-boot.img, it will be located at `out/target/product/oneplus3/halium-boot.img`.\
+There are 3 ways of flashing the boot image to your device (choose one):
 1. Using adb (Boot into TWRP, connect usb cable and then run from your pc):
 ```
 adb push path/to/halium-boot.img /tmp/
@@ -137,13 +137,11 @@ adb shell "dd if=/tmp/halium-boot.img of=/dev/block/bootdevice/by-name/boot"
 ```
 fastboot flash boot path/to/halium-boot.img
 ```
-3. Using TWRP's own install method (Boot into TWRP, connect usb cable and then run from your pc):
+3. Using TWRP's own install method (Boot into TWRP, connect usb cable and then run from your pc):\
 a) Connect your device to your pc and push halium-boot.img to the device:
-```
-adb push path/to/halium-boot.img /sdcard/.
-```
-b) In TWRP main menu, press `Install` -> `Install Image` -> halium-boot.img
-c) Select `Boot` as the partiton where to install, then `Swipe to confirm Flash`
+`adb push path/to/halium-boot.img /sdcard/.`<br>
+b) In TWRP main menu, press `Install` -> `Install Image` -> `halium-boot.img`<br>
+c) Select `Boot` as the partiton where to install, then `Swipe to confirm Flash`<br>
 
 
 ## Thanks

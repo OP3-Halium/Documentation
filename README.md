@@ -103,31 +103,25 @@ Reboot into Lineage, confirm everything works fine.
 
 1. Download the latest GSI zip from [here](https://mirrors.lolinet.com/firmware/halium/GSI)
 2. Ensure your `/vendor` partition is populated (after mounting) with content from an Android 9 ROM (LineageOS or equivalent)
-3. Flash the GSI zip file
-4. Flash [halium-boot.img](https://github.com/OP3-Halium/Documentation/blob/master/halium-boot.img) to your boot partition (if you didn't yet):
-```
-adb push ~/Halium/out/target/product/oneplus3/halium-boot.img /tmp/
-adb shell "dd if=/tmp/halium-boot.img of=/dev/block/bootdevice/by-name/boot"
-```
-5. Flash the [OP3_GSI_Fix_V1.X](https://drive.google.com/drive/folders/1vnJEKkhO3xqH-fWWG55-yxwx5K1EeKq7?usp=sharing)
-6. Reboot
-7. Enjoy!
+3. In TWRP, go to `Wipe` -> `Advanced Wipe` -> Select everything except Vendor and USB-OTG, then `Swipe to Wipe`. Then reboot back to recovery.
+4. Flash the GSI zip file
+5. Flash [halium-boot.img](https://github.com/OP3-Halium/Documentation/blob/master/halium-boot.img) to your boot partition (See instructions in the note below)
+6. Flash the [OP3_GSI_Fix_V1.X](https://drive.google.com/drive/folders/1vnJEKkhO3xqH-fWWG55-yxwx5K1EeKq7?usp=sharing)
+7. Reboot
+8. Enjoy!
 
 
 ## Installing Droidian
 
 1. Download latest .zip from [here](https://github.com/droidian-images/droidian/releases) (look for api28-arm64 zip)
 2. Ensure your '/vendor' partition is populated (after mounting) with content from an Android 9 ROM (LineageOS or equivalent)
-3. Flash the droidian zip file
-4. Flash [halium-boot.img](https://github.com/OP3-Halium/Documentation/blob/master/halium-boot.img) to your boot partition:
-```
-adb push ~/Halium/out/target/product/oneplus3/halium-boot.img /tmp/
-adb shell "dd if=/tmp/halium-boot.img of=/dev/block/bootdevice/by-name/boot"
-```
-5. Flash [op3-gsi-fix-droidian.zip](https://gitlab.com/Bettehem/op3-gsi-fix-droidian/-/jobs/artifacts/main/browse?job=makezip)
-6. Reboot
-7. Once you have booted for the first time, open a terminal on the phone and run the `move-home` command, which will move your home folder to the /userdata partition so you can use all of the storage on your device. Your device will reboot when it's done.
-8. Enjoy!
+3. In TWRP, go to `Wipe` -> `Advanced Wipe` -> Select everything except Vendor and USB-OTG, then `Swipe to Wipe`. Then reboot back to recovery.
+4. Flash the droidian zip file
+5. Flash [halium-boot.img](https://github.com/OP3-Halium/Documentation/blob/master/halium-boot.img) to your boot partition (See instructions in the note below)
+6. Flash [op3-gsi-fix-droidian.zip](https://gitlab.com/Bettehem/op3-gsi-fix-droidian/-/jobs/artifacts/main/browse?job=makezip)
+7. Reboot
+8. Once you have booted for the first time, open a terminal on the phone and run the `move-home` command, which will move your home folder to the /userdata partition so you can use all of the storage on your device. Your device will reboot when it's done.
+9. Enjoy!
 
 
 ## Note

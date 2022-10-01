@@ -11,7 +11,7 @@
  * you point the finger at us for messing up your device, we are not responsible.
 ```
 
-to install ubuntu touch on your OP3, you don't need to compile halium source, got directly to [Treblelizing your OP3(T) & Firmware & TWRP](#treblelizing-your-op3t--firmware--twrp)
+To install Ubuntu Touch on your OP3/3T, you don't need to compile halium source, go directly to [Treblelizing your OP3(T) & Firmware & TWRP](#treblelizing-your-op3t--firmware--twrp)
 
 
 ### Table of Contents
@@ -99,29 +99,49 @@ Reboot into the TWRP Recovery
 Reboot into Lineage, confirm everything works fine.
 
 
-## Installing using Erfan GSI
+## Installing Erfan's Ubuntu Touch GSI
 
-1. Download the latest GSI zip from [here](https://t.me/ErfanGSI)
-2. Download the https://mirrors.lolinet.com/firmware/halium/GSI/tools/halium-ramdisk.zip
-3. Ensure your `/vendor` (after mounting) is populated with content from an Android 9 ROM (LineageOS or otherwise)
+1. Download the latest GSI zip from [here](https://mirrors.lolinet.com/firmware/halium/GSI)
+2. Ensure your `/vendor` partition is populated (after mounting) with content from an Android 9 ROM (LineageOS or equivalent)
+3. In TWRP, go to `Wipe` -> `Advanced Wipe` -> Select everything except Vendor and USB-OTG, then `Swipe to Wipe`. Then reboot back to recovery.
 4. Flash the GSI zip file
-5. Flash the [halium-boot.img](https://drive.google.com/drive/folders/1vnJEKkhO3xqH-fWWG55-yxwx5K1EeKq7?usp=sharing) from before to your boot partition (if you didn't yet):
-```
-adb push ~/Halium/out/target/product/oneplus3/halium-boot.img /tmp/
-adb shell "dd if=/tmp/halium-boot.img of=/dev/block/bootdevice/by-name/boot"
-```
-6. Flash the halium-ramdisk.zip
-7. Flash the [OP3_GSI_Fix_V1.X](https://drive.google.com/drive/folders/1vnJEKkhO3xqH-fWWG55-yxwx5K1EeKq7?usp=sharing)
-8. Reboot
-9. Enjoy
+5. Flash [halium-boot.img](https://github.com/OP3-Halium/Documentation/blob/master/halium-boot.img) to your boot partition (See instructions in the [note](#note) below)
+6. Flash the [OP3_GSI_Fix_V1.X](https://drive.google.com/drive/folders/1vnJEKkhO3xqH-fWWG55-yxwx5K1EeKq7?usp=sharing)
+7. Reboot
+8. Enjoy!
+
+
+## Installing Droidian
+
+1. Download latest .zip from [here](https://github.com/droidian-images/droidian/releases) (look for api28-arm64 zip)
+2. Ensure your '/vendor' partition is populated (after mounting) with content from an Android 9 ROM (LineageOS or equivalent)
+3. In TWRP, go to `Wipe` -> `Advanced Wipe` -> Select everything except Vendor and USB-OTG, then `Swipe to Wipe`. Then reboot back to recovery.
+4. Flash the droidian zip file
+5. Flash [halium-boot.img](https://github.com/OP3-Halium/Documentation/blob/master/halium-boot.img) to your boot partition (See instructions in the [note](#note) below)
+6. Flash [op3-gsi-fix-droidian.zip](https://gitlab.com/Bettehem/op3-gsi-fix-droidian/-/jobs/artifacts/main/browse?job=makezip)
+7. Reboot
+8. Once you have booted for the first time, open a terminal on the phone and run the `move-home` command, which will move your home folder to the /userdata partition so you can use all of the storage on your device. Your device will reboot when it's done.
+9. Enjoy!
 
 
 ## Note
 
-Assuming your device is in fastboot mode you can now flash this image by simply using:
+If you built your own halium-boot.img, it will be located at `out/target/product/oneplus3/halium-boot.img`.\
+There are 3 ways of flashing the boot image to your device (choose one):
+1. Using adb (Boot into TWRP, connect usb cable and then run from your pc):
 ```
-fastboot flash boot out/target/product/oneplus3/halium-boot.img
+adb push path/to/halium-boot.img /tmp/
+adb shell "dd if=/tmp/halium-boot.img of=/dev/block/bootdevice/by-name/boot"
 ```
+2. Using fastboot (Boot into fastboot/bootloader mode, connect usb cable and then run from your pc):
+```
+fastboot flash boot path/to/halium-boot.img
+```
+3. Using TWRP's own install method (Boot into TWRP, connect usb cable and then run from your pc):\
+a) Connect your device to your pc and push halium-boot.img to the device:
+`adb push path/to/halium-boot.img /sdcard/.`<br>
+b) In TWRP main menu, press `Install` -> `Install Image` -> `halium-boot.img`<br>
+c) Select `Boot` as the partiton where to install, then `Swipe to confirm Flash`<br>
 
 
 ## Thanks
@@ -132,7 +152,7 @@ fastboot flash boot out/target/product/oneplus3/halium-boot.img
 ## Source
 https://github.com/OP3-Halium/
 
-## Known issues & temporary fix
+## Ubuntu Touch Known issues & temporary fix
 - Webbrowser not reconized as a mobile 
   -  edit the file ```sudo nano /usr/lib/arm-linux-gnueabihf/qt5/qml/Morph/Web/UserAgent02.qml```
   -  chang line 68 to ``` return (screenDiagonal === 0) ? "unknown" : (screenDiagonal > 0 && screenDiagonal < 190) ? "small" : "small" ```

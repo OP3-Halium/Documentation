@@ -19,11 +19,12 @@ To install Ubuntu Touch on your OP3/3T, you don't need to compile halium source,
 * [Initializing local repo](#initializing-local-repo)
 * [Syncing local repository](#syncing-local-repository)
 * [Applying patches](#applying-patches)
-* [Building HAL parts](#building-HAL-parts)
+* [Building HAL parts](#building-hal-parts)
 * [Treblelizing your OP3(T) & Firmware & TWRP](#treblelizing-your-op3t--firmware--twrp)
-* [Installing using Erfan GSI](#installing-using-Erfan-GSI)
+* [Installing UBports using Erfan's GSI](#installing-erfans-ubuntu-touch-gsi)
+* [Installing Droidian](#installing-droidian)
 * [Note](#note)
-* [Source](#Source)
+* [Source](#source)
 * [Thanks](#thanks)
 
 ## Install prerequisites for building

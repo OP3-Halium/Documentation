@@ -1,9 +1,7 @@
 # Documentation
- Building &amp; installation documentation for Ubuntu Touch on the OnePlus 3/3T
+Building &amp; installation documentation for Halium 9 Ubuntu Touch & Droidian on the OnePlus 3/3T
 
 ```
- * Your warranty is now void.
- *
  * We are not responsible for bricked devices, dead SD cards,
  * thermonuclear war, or you getting fired because the alarm app failed. Please
  * do some research if you have any concerns about features included in this modification
@@ -11,7 +9,8 @@
  * you point the finger at us for messing up your device, we are not responsible.
 ```
 
-To install Ubuntu Touch on your OP3/3T, you don't need to compile halium source, go directly to [Treblelizing your OP3(T) & Firmware & TWRP](#treblelizing-your-op3t--firmware--twrp)
+To install Ubuntu Touch or Droidian on your OP3/3T, you don't necessarily need to compile halium source.\
+If you want to use the pre-built image, you can go directly to [Treblelizing your OP3(T) & Firmware & TWRP](#treblelizing-your-op3t--firmware--twrp)
 
 
 ### Table of Contents
@@ -102,6 +101,7 @@ Reboot into Lineage, confirm everything works fine.
 
 ## Installing Erfan's Ubuntu Touch GSI
 
+Note that this version of Ubuntu Touch is old and no longer developed. OnePlus 3 development is currently focused on Droidian but once everything is working there, Ubuntu Touch will be revived on the OP3
 1. Download the latest GSI zip from [here](https://mirrors.lolinet.com/firmware/halium/GSI)
 2. Ensure your `/vendor` partition is populated (after mounting) with content from an Android 9 ROM (LineageOS or equivalent)
 3. In TWRP, go to `Wipe` -> `Advanced Wipe` -> Select everything except Vendor and USB-OTG, then `Swipe to Wipe`. Then reboot back to recovery.
@@ -120,9 +120,11 @@ Reboot into Lineage, confirm everything works fine.
 4. Flash the droidian zip file
 5. Flash [halium-boot.img](https://github.com/OP3-Halium/Documentation/blob/master/halium-boot.img) to your boot partition (See instructions in the [note](#note) below)
 6. Flash [op3-gsi-fix-droidian.zip](https://gitlab.com/Bettehem/op3-gsi-fix-droidian/-/jobs/artifacts/main/browse?job=makezip)
-7. Reboot
-8. Once you have booted for the first time, open a terminal on the phone and run the `move-home` command, which will move your home folder to the /userdata partition so you can use all of the storage on your device. Your device will reboot when it's done.
-9. Enjoy!
+7. Reboot. The phone will first show the droidian logo, then the screen will go black for 20-30 seconds. During this time when the screen is black, **do not** press the power button. Wait patiently, the screen will turn back on when the boot process is done.
+8. Once you have booted for the first time, open a terminal on the phone and run this command:\
+   `sudo apt update && sudo apt install adaptation-droidian-oneplus3`
+10. Next run the `move-home` command, which will move your home folder to the /userdata partition so you can use all of the storage on your device. Your device will reboot when it's done.
+11. Enjoy!
 
 
 ## Note
